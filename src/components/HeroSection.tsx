@@ -116,63 +116,54 @@ export default function HeroSection() {
       />
 
       {/* Main content */}
-      <div className="relative z-50 text-center flex flex-col items-center px-6 max-w-2xl">
-        {/* Logo */}
-        <div className="relative mb-10 animate-[fadeInUp_1.2s_cubic-bezier(0.16,1,0.3,1)_forwards]">
-          <div
-            className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-3/5 h-10"
+      <div className="relative z-50 flex flex-col items-center justify-center min-h-screen px-6">
+        {/* Top section: Logo + Coming Soon — tightly grouped */}
+        <div className="flex flex-col items-center">
+          {/* Logo with subtle glow beneath */}
+          <div className="relative mb-6">
+            <div
+              className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-2/3 h-8 opacity-60"
+              style={{
+                background: "radial-gradient(ellipse, rgba(180, 77, 255, 0.3), transparent)",
+                filter: "blur(16px)",
+              }}
+            />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/logo-white.png"
+              alt="AlgoraX"
+              width={240}
+              height={240}
+              style={{ width: "min(240px, 55vw)", height: "auto" }}
+              className="drop-shadow-[0_0_30px_rgba(180,77,255,0.15)]"
+            />
+          </div>
+
+          {/* Coming Soon — the hero text */}
+          <h1
+            className="text-[clamp(2rem,5.5vw,3.8rem)] font-extrabold tracking-[0.15em] uppercase leading-none"
             style={{
-              background:
-                "radial-gradient(ellipse, rgba(180, 77, 255, 0.25), transparent)",
-              filter: "blur(12px)",
+              background: "linear-gradient(135deg, #ffffff 0%, #d896ff 50%, #ffffff 100%)",
+              backgroundSize: "200% 200%",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+              animation: "shimmer 4s ease-in-out infinite",
             }}
-          />
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/logo-white.png"
-            alt="AlgoraX"
-            width={380}
-            height={380}
-            style={{ width: "min(380px, 75vw)", height: "auto" }}
-            className="drop-shadow-[0_0_40px_rgba(180,77,255,0.2)] hover:drop-shadow-[0_0_60px_rgba(180,77,255,0.35)] transition-[filter] duration-500"
-          />
+          >
+            Coming Soon
+          </h1>
         </div>
 
-        {/* Coming Soon */}
-        <h1
-          className="text-[clamp(2.5rem,7vw,5rem)] font-extrabold tracking-[0.12em] uppercase leading-none mb-4"
-          style={{
-            opacity: 1,
-            background:
-              "linear-gradient(135deg, #ffffff 0%, #d896ff 50%, #ffffff 100%)",
-            backgroundSize: "200% 200%",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-            backgroundClip: "text",
-            animation: "shimmer 4s ease-in-out infinite",
-          }}
-        >
-          Coming Soon
-        </h1>
-
-        {/* Subtitle */}
-        <p className="text-[clamp(0.95rem,2.2vw,1.3rem)] font-light text-white/60 tracking-[0.35em] uppercase mb-10">
-          Trade with clarity.
-        </p>
-
-        {/* Divider */}
+        {/* Divider — visual breathing room */}
         <div
-          className="w-24 h-[2px] mb-10"
-          style={{
-            background:
-              "linear-gradient(90deg, transparent, #b44dff, transparent)",
-          }}
+          className="w-16 h-px my-8"
+          style={{ background: "linear-gradient(90deg, transparent, #b44dff, transparent)" }}
         />
 
-        {/* Tagline */}
-        <p className="text-[clamp(0.85rem,1.5vw,1.05rem)] text-white/40 leading-relaxed max-w-md mb-10 tracking-wide">
-          We&apos;re building something powerful. An elite trading algorithm
-          indicator designed to give you the edge in every market.
+        {/* Subtitle */}
+        <p className="text-sm sm:text-base font-light text-white/50 tracking-[0.3em] uppercase mb-12">
+          Trade with clarity.
         </p>
 
         {/* Discord CTA */}
@@ -180,10 +171,10 @@ export default function HeroSection() {
           href="https://discord.gg/977KmrHXX2"
           target="_blank"
           rel="noopener noreferrer"
-          className="group relative inline-flex items-center gap-3 px-8 py-3.5 rounded-full border border-white/10 bg-white/[0.04] text-white text-sm font-medium tracking-wider overflow-hidden backdrop-blur-sm transition-all duration-500 hover:border-[#b44dff66] hover:shadow-[0_8px_40px_rgba(180,77,255,0.15)] hover:-translate-y-0.5"
+          className="group relative inline-flex items-center gap-3 px-7 py-3 rounded-full border border-white/[0.08] bg-white/[0.03] text-white/90 text-sm font-medium tracking-wider overflow-hidden backdrop-blur-sm transition-all duration-500 hover:border-[#b44dff55] hover:bg-white/[0.06] hover:shadow-[0_0_30px_rgba(180,77,255,0.12)] hover:-translate-y-0.5"
         >
-          <span className="absolute inset-0 bg-gradient-to-r from-[#b44dff1a] to-[#8b2fc91a] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-          <span className="relative z-10 flex items-center gap-3">
+          <span className="absolute inset-0 bg-gradient-to-r from-[#b44dff0d] to-[#8b2fc90d] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <span className="relative z-10 flex items-center gap-2.5">
             {discordIcon}
             Join Our Discord
           </span>
