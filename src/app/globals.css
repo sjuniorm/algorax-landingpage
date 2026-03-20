@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+:root {
+  --background: #050010;
+  --foreground: #ffffff;
+  --purple-deep: #0a0014;
+  --purple-dark: #120024;
+  --purple-mid: #2d0a5e;
+  --purple-bright: #8b2fc9;
+  --purple-glow: #b44dff;
+  --purple-light: #d896ff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-purple-deep: var(--purple-deep);
+  --color-purple-dark: var(--purple-dark);
+  --color-purple-mid: var(--purple-mid);
+  --color-purple-bright: var(--purple-bright);
+  --color-purple-glow: var(--purple-glow);
+  --color-purple-light: var(--purple-light);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+/* Animated shimmer for heading */
+@keyframes shimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.05); }
+}
+
+@keyframes streak-move-1 {
+  0%, 100% { opacity: 0.2; transform: rotate(-25deg) translateX(-5%); }
+  50% { opacity: 0.6; transform: rotate(-25deg) translateX(5%); }
+}
+
+@keyframes streak-move-2 {
+  0%, 100% { opacity: 0.15; transform: rotate(20deg) translateX(5%); }
+  50% { opacity: 0.5; transform: rotate(20deg) translateX(-5%); }
+}
+
+@keyframes streak-move-3 {
+  0%, 100% { opacity: 0.1; transform: rotate(-12deg) translateX(-3%); }
+  50% { opacity: 0.4; transform: rotate(-12deg) translateX(3%); }
+}
+
+@keyframes orb-float-1 {
+  0%, 100% { transform: translate(0, 0); }
+  33% { transform: translate(-40px, 50px); }
+  66% { transform: translate(30px, -30px); }
+}
+
+@keyframes orb-float-2 {
+  0%, 100% { transform: translate(0, 0); }
+  33% { transform: translate(50px, -40px); }
+  66% { transform: translate(-30px, 30px); }
+}
+
+@keyframes orb-float-3 {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.4); }
+}
