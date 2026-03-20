@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
 import ParticleCanvas from "./ParticleCanvas";
 
@@ -12,7 +11,7 @@ const discordIcon = (
 
 export default function HeroSection() {
   return (
-    <div className="relative h-full w-full flex items-center justify-center overflow-hidden">
+    <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden">
       {/* Background gradient */}
       <div
         className="fixed inset-0 z-0"
@@ -117,14 +116,9 @@ export default function HeroSection() {
       />
 
       {/* Main content */}
-      <div className="relative z-10 text-center flex flex-col items-center px-6 max-w-2xl">
+      <div className="relative z-50 text-center flex flex-col items-center px-6 max-w-2xl">
         {/* Logo */}
-        <motion.div
-          initial={{ opacity: 0, y: -30, scale: 0.9 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-          className="relative mb-10"
-        >
+        <div className="relative mb-10 animate-[fadeInUp_1.2s_cubic-bezier(0.16,1,0.3,1)_forwards]">
           <div
             className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-3/5 h-10"
             style={{
@@ -133,23 +127,22 @@ export default function HeroSection() {
               filter: "blur(12px)",
             }}
           />
-          <Image
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
             src="/logo-white.png"
             alt="AlgoraX"
             width={380}
             height={380}
-            priority
-            className="w-[min(380px,75vw)] h-auto drop-shadow-[0_0_40px_rgba(180,77,255,0.2)] hover:drop-shadow-[0_0_60px_rgba(180,77,255,0.35)] transition-[filter] duration-500"
+            style={{ width: "min(380px, 75vw)", height: "auto" }}
+            className="drop-shadow-[0_0_40px_rgba(180,77,255,0.2)] hover:drop-shadow-[0_0_60px_rgba(180,77,255,0.35)] transition-[filter] duration-500"
           />
-        </motion.div>
+        </div>
 
         {/* Coming Soon */}
-        <motion.h1
-          initial={{ opacity: 0, y: 25 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+        <h1
           className="text-[clamp(2.5rem,7vw,5rem)] font-extrabold tracking-[0.12em] uppercase leading-none mb-4"
           style={{
+            opacity: 1,
             background:
               "linear-gradient(135deg, #ffffff 0%, #d896ff 50%, #ffffff 100%)",
             backgroundSize: "200% 200%",
@@ -160,23 +153,15 @@ export default function HeroSection() {
           }}
         >
           Coming Soon
-        </motion.h1>
+        </h1>
 
         {/* Subtitle */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
-          className="text-[clamp(0.95rem,2.2vw,1.3rem)] font-light text-white/60 tracking-[0.35em] uppercase mb-10"
-        >
+        <p className="text-[clamp(0.95rem,2.2vw,1.3rem)] font-light text-white/60 tracking-[0.35em] uppercase mb-10">
           Trade with clarity.
-        </motion.p>
+        </p>
 
         {/* Divider */}
-        <motion.div
-          initial={{ opacity: 0, scaleX: 0 }}
-          animate={{ opacity: 1, scaleX: 1 }}
-          transition={{ duration: 1, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
+        <div
           className="w-24 h-[2px] mb-10"
           style={{
             background:
@@ -185,34 +170,24 @@ export default function HeroSection() {
         />
 
         {/* Tagline */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, delay: 0.55, ease: [0.16, 1, 0.3, 1] }}
-          className="text-[clamp(0.85rem,1.5vw,1.05rem)] text-white/40 leading-relaxed max-w-md mb-10 tracking-wide"
-        >
+        <p className="text-[clamp(0.85rem,1.5vw,1.05rem)] text-white/40 leading-relaxed max-w-md mb-10 tracking-wide">
           We&apos;re building something powerful. An elite trading algorithm
           indicator designed to give you the edge in every market.
-        </motion.p>
+        </p>
 
         {/* Discord CTA */}
-        <motion.a
+        <a
           href="https://discord.gg/977KmrHXX2"
           target="_blank"
           rel="noopener noreferrer"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          whileHover={{ y: -3, scale: 1.02 }}
-          whileTap={{ scale: 0.98 }}
-          className="group relative inline-flex items-center gap-3 px-8 py-3.5 rounded-full border border-white/10 bg-white/[0.04] text-white text-sm font-medium tracking-wider overflow-hidden backdrop-blur-sm transition-all duration-500 hover:border-purple-glow/40 hover:shadow-[0_8px_40px_rgba(180,77,255,0.15)]"
+          className="group relative inline-flex items-center gap-3 px-8 py-3.5 rounded-full border border-white/10 bg-white/[0.04] text-white text-sm font-medium tracking-wider overflow-hidden backdrop-blur-sm transition-all duration-500 hover:border-[#b44dff66] hover:shadow-[0_8px_40px_rgba(180,77,255,0.15)] hover:-translate-y-0.5"
         >
-          <span className="absolute inset-0 bg-gradient-to-r from-purple-glow/10 to-purple-bright/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <span className="absolute inset-0 bg-gradient-to-r from-[#b44dff1a] to-[#8b2fc91a] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           <span className="relative z-10 flex items-center gap-3">
             {discordIcon}
             Join Our Discord
           </span>
-        </motion.a>
+        </a>
       </div>
     </div>
   );
